@@ -166,6 +166,12 @@ def tic_tac_toe():
         for i in range(9):
             resp += f'<input name="h{i}" value="{values[i]}" type="hidden"></input>\n<button name="b{i}" type="submit" {"disabled" if (values[i] == "X" or values[i] == "O") else " "}>{values[i]}</button>\n{("<br>" if (i == 2 or i == 5) else " ")}'
 
+    resp += '''
+            <br>
+            <a href="/cpu">Restart</a>
+            <a href="/">Home</a>
+            '''
+
     return resp
 
 
@@ -205,13 +211,16 @@ def tic_tac_toe2():
     else:
         for i in range(9):
             resp += f'<input name="h{i}" value="{values[i]}" type="hidden"></input>\n<button name="b{i}" type="submit" {"disabled" if (values[i] == "X" or values[i] == "O") else " "}>{values[i]}</button>\n{("<br>" if (i == 2 or i == 5) else " ")}'
+
     resp += '''
         <br>
         <a href="/cpu">Restart</a>
         <a href="/">Home</a>
         '''
+
     return resp
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
+
