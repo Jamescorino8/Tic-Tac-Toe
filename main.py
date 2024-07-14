@@ -168,7 +168,7 @@ def tic_tac_toe():
 
     resp += '''
             <br>
-            <a href="/cpu">Restart</a>
+            <a href="/one_on_one">Restart</a>
             <a href="/">Home</a>
             '''
 
