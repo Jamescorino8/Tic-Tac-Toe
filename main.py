@@ -12,11 +12,28 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return '''
-    <h1>Welcome to Tic Tac Toe</h1>
-    <h2>Choose a game mode:</h2>
-    <a href="/cpu">Play Tic Tac Toe vs computer</a>
-    <br>
-    <a href="/one_on_one">Play Tic Tac Toe vs another player</a>
+    <HTML>
+        <style>
+            body {
+                text-align: center;
+            }
+            button {
+                background-color: white;
+                outline: 10px;
+                font-size: 20px;
+            }
+        </style>
+        <body>
+            <h1>Welcome to Tic Tac Toe</h1>
+            <h3>Choose a game mode:</h3>
+            <button onclick="window.location.href='/one_on_one'">One on One 👥: Play against a friend</button>
+            <br>
+            <button onclick="window.location.href='/cpu'">Against CPU 💻: Play against a computer</button>
+
+            <h4>Purpose</h4>
+            <p>This is a simple Tic Tac Toe game created for the purpose of learning. <br>The game is built using Flask, Python, HTML, and HTMX.</p>
+        </body>
+    </HTML>
     '''
 @app.route('/cpu')
 def cpu():
