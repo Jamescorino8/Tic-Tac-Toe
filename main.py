@@ -32,6 +32,7 @@ def index():
 
             <h4>Purpose</h4>
             <p>This is a simple Tic Tac Toe game created for the purpose of learning. <br>The game is built using Flask, Python, HTML, and HTMX.</p>
+            <p><i>Created by James Corino</i></p>
         </body>
     </HTML>
     '''
@@ -45,7 +46,7 @@ def cpu():
       <style>
         body {
           text-align: center;
-          margin-top: 5%;
+          margin-top: 50%;
         }
         button {
           margin:10px 10px;
