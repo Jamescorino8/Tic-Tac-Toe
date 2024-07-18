@@ -16,6 +16,7 @@ def index():
         <style>
             body {
                 text-align: center;
+                margin-top: 10%;
             }
             button {
                 background-color: white;
@@ -46,7 +47,7 @@ def cpu():
       <style>
         body {
           text-align: center;
-          margin-top: 50%;
+          margin-top: 10%;
         }
         button {
           margin:10px 10px;
