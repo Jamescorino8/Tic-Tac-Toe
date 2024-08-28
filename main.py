@@ -2,7 +2,7 @@
 # Version 5/21/24
 # Utilizing: Flask, Python, HTML, and HTMX
 
-from flask import Flask, request
+from flask import Flask, request, url_for
 import functions
 
 
@@ -39,11 +39,11 @@ def index():
     '''
 @app.route('/cpu')
 def cpu():
-    return '''
+    return f'''
     <html>
       <head>
          <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-         <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="{url_for('static', filename='style.css')}">
       </head>
       
       <body>
@@ -75,31 +75,12 @@ def cpu():
 
 @app.route('/one_on_one')
 def one_on_one():
-    return '''
+    return f'''
     <html>
       <head>
          <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-         <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="{url_for('static', filename='style.css')}">
       </head>
-      <style>
-        body {
-          text-align: center;
-          margin-top: 5%;
-        }
-        button {
-          margin:10px 10px;
-          background-color: white;
-          height: 75px;
-          width: 75px;
-          outline: 10px;
-          font-size: 40px;
-        }
-        button:disabled {
-          color: black;
-          background-color: white;
-          border-color: black;
-        }
-      </style>
       <body>
         <form hx-post="/tic_tac_toe" hx-target="this" hx-swap="innerHTML">
           <input name="h0" value="&#25" type="hidden"></input>
