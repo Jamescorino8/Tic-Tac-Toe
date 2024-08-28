@@ -39,11 +39,29 @@ def index():
     '''
 @app.route('/cpu')
 def cpu():
-    return f'''
+    return '''
     <html>
       <head>
          <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-         <link rel="stylesheet" href="{url_for('static', filename='style.css')}">
+         <style>
+            body {
+                text-align: center;
+                margin-top: 10%;
+            }
+            button {
+                margin:10px 10px;
+                background-color: white;
+                height: 75px;
+                width: 75px;
+                outline: 10px;
+                font-size: 40px;
+            }
+            button:disabled {
+                color: black;
+                background-color: white;
+                border-color: black;
+            }
+         </style>
       </head>
       
       <body>
@@ -75,11 +93,29 @@ def cpu():
 
 @app.route('/one_on_one')
 def one_on_one():
-    return f'''
+    return '''
     <html>
       <head>
          <script src="https://unpkg.com/htmx.org@1.9.12"></script>
-         <link rel="stylesheet" href="{url_for('static', filename='style.css')}">
+         <style>
+            body {
+                text-align: center;
+                margin-top: 10%;
+            }
+            button {
+                margin:10px 10px;
+                background-color: white;
+                height: 75px;
+                width: 75px;
+                outline: 10px;
+                font-size: 40px;
+            }
+            button:disabled {
+                color: black;
+                background-color: white;
+                border-color: black;
+            }
+         </style>
       </head>
       <body>
         <form hx-post="/tic_tac_toe" hx-target="this" hx-swap="innerHTML">
@@ -203,7 +239,6 @@ def tic_tac_toe2():
         '''
 
     return resp
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
